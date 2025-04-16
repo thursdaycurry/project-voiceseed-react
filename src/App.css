@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+#app {
+  background-color: rgb(244, 246, 241);
+}
+
+body {
+  color: darkslategray;
+}
