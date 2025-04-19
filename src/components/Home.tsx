@@ -4,11 +4,9 @@ export default function Home() {
       <div className="flex mx-auto ">
         {/* text part */}
         <div className="flex-1">
-          <div className="text-[50px] font-semibold">
-            AI-Powered Text-to-Speech
-          </div>
+          <div className="text-[50px] font-semibold">Craft what you think</div>
           <div className="text-[20px]">
-            Plant good voices. Grow your mind. Become who you're meant to be.
+            Select your thoughts. Tend your mind like a garden.
           </div>
         </div>
 
