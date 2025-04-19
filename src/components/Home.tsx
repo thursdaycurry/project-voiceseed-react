@@ -6,7 +6,8 @@ export default function Home() {
         <div className="flex-1">
           <div className="text-[50px] font-semibold">Craft what you think</div>
           <div className="text-[20px]">
-            Select your thoughts. Tend your mind like a garden.
+            What you hear becomes the material of your mind, and it builds who
+            you are.
           </div>
         </div>
 
