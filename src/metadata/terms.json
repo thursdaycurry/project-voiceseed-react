@@ -1,6 +1,7 @@
 {
   "isoLang": {
-    "en": "English",
-    "ko": "Korean"
+    "list": ["en", "ko"],
+    "en": { "label": "English" },
+    "ko": { "label": "Korean" }
   }
 }
