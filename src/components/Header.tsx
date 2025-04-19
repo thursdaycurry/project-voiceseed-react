@@ -9,7 +9,8 @@ export default function Header() {
       {/* Center part */}
       <nav className="flex space-x-10">
         <Link to="/">Home</Link>
-        <Link to="/how-it-works">How It works</Link>
+        <Link to="/playground">Playground</Link>
+        <Link to="/usecases">Use cases</Link>
         <Link to="/pricing">Pricing</Link>
       </nav>
       {/* User part */}
