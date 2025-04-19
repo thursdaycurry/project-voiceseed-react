@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import terms from "../metadata/terms.json";
 import textSamples from "../metadata/sample.json";
 import OptionsBox from "./OptionsBox";
@@ -22,9 +22,22 @@ export default function Playground() {
     setter: (value) => setSelectSample(value),
   };
 
+  const submitHandler = () => {
+    console.log("submitted");
+  };
+
+  useEffect(() => {
+    if (selectSample !== "blank") {
+      const newText: string = textSamples.text?.[selectSample];
+      setInputText(newText);
+    } else {
+      setInputText("");
+    }
+  }, [selectSample]);
+
   return (
     <div className="p-[100px] flex flex-col items-center ">
-      <div className="w-[500px] space-y-[15px]">
+      <div className="w-[500px] space-y-[35px]">
         <div>
           <div>Text to Speech</div>
           <div>
@@ -36,7 +49,7 @@ export default function Playground() {
               placeholder="오디오로 변환할 글을 입력하세요."
             />
           </div>
-          <div>
+          <div className="text-sm">
             <div>Sample</div>
             <div>
               <OptionsBox
@@ -62,11 +75,17 @@ export default function Playground() {
         <div>
           <div>Language</div>
 
-          <OptionsBox options={["ko", "en"]} optionHandler={selectHandler} />
+          <OptionsBox
+            options={terms.isoLang?.["list"]}
+            optionHandler={selectHandler}
+          />
         </div>
 
         <div>
-          <button className="border w-full rounded-md bg-green-200 p-1 font-semibold">
+          <button
+            onClick={submitHandler}
+            className="border w-full rounded-md bg-green-200 p-1 font-semibold cursor-pointer"
+          >
             Submit
           </button>
         </div>
