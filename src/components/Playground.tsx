@@ -1,15 +1,26 @@
 import { useState } from "react";
 import terms from "../metadata/terms.json";
+import textSamples from "../metadata/sample.json";
+import OptionsBox from "./OptionsBox";
 
 export default function Playground() {
   const [inputText, setInputText] = useState("");
 
   const textInputHandler = (e) => {
     setInputText(e.target.value);
-    console.log(inputText);
   };
 
   const [selectLang, setSelectLang] = useState("ko");
+  const selectHandler = {
+    getter: selectLang,
+    setter: (value) => setSelectLang(value),
+  };
+
+  const [selectSample, setSelectSample] = useState("theHeartSutra");
+  const sampleHander = {
+    getter: selectSample,
+    setter: (value) => setSelectSample(value),
+  };
 
   return (
     <div className="p-[100px] flex flex-col items-center ">
@@ -24,6 +35,15 @@ export default function Playground() {
               onChange={textInputHandler}
               placeholder="오디오로 변환할 글을 입력하세요."
             />
+          </div>
+          <div>
+            <div>Sample</div>
+            <div>
+              <OptionsBox
+                options={textSamples.list}
+                optionHandler={sampleHander}
+              />
+            </div>
           </div>
         </div>
 
@@ -41,11 +61,8 @@ export default function Playground() {
 
         <div>
           <div>Language</div>
-          <LanguageSelectBox
-            languages={["ko", "en"]}
-            selectLang={selectLang}
-            setSelectLang={setSelectLang}
-          />
+
+          <OptionsBox options={["ko", "en"]} optionHandler={selectHandler} />
         </div>
 
         <div>
@@ -55,34 +72,5 @@ export default function Playground() {
         </div>
       </div>
     </div>
-  );
-}
-
-function LanguageSelectBox({ languages, selectLang, setSelectLang }) {
-  return (
-    <div className="flex space-x-[5px]">
-      {languages.length
-        ? languages.map((language) => (
-            <LanguageButton
-              language={language}
-              selectLang={selectLang}
-              setSelectLang={setSelectLang}
-            />
-          ))
-        : "Languages are not supported"}
-    </div>
-  );
-}
-
-function LanguageButton({ language, selectLang, setSelectLang }) {
-  return (
-    <button
-      className={`border p-1 hover:bg-gray-200 cursor-pointer text-sm rounded-md ${
-        selectLang === language ? "bg-gray-300" : ""
-      }`}
-      onClick={() => setSelectLang(language)}
-    >
-      {terms.isoLang[language]}
-    </button>
   );
 }
