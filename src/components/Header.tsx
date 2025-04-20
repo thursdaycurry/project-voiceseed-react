@@ -10,13 +10,11 @@ export default function Header() {
       <nav className="flex space-x-10">
         <Link to="/">Home</Link>
         <Link to="/playground">Playground</Link>
-        <Link to="/usecases">Use cases</Link>
-        <Link to="/pricing">Pricing</Link>
+        {/* <Link to="/usecases">Use cases</Link>
+        <Link to="/pricing">Pricing</Link> */}
       </nav>
       {/* User part */}
-      <div className="flex space-x-10 ">
-        <div>Login</div>
-      </div>
+      <div className="flex space-x-10 ">{/* <div>Login</div> */}</div>
     </header>
   );
 }

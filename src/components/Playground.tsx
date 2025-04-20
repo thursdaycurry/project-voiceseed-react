@@ -16,7 +16,7 @@ export default function Playground() {
     setter: (value) => setSelectLang(value),
   };
 
-  const [selectSample, setSelectSample] = useState("theHeartSutra");
+  const [selectSample, setSelectSample] = useState("blank");
   const sampleHander = {
     getter: selectSample,
     setter: (value) => setSelectSample(value),
