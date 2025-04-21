@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { login } from "../common/api/auth";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, password });
+    const res = await login({ email, password });
+
+    console.log(`res`);
+    console.log(res);
   };
 
   return (
