@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Playground from "./components/Playground";
 import Footer from "./components/Footer";
+import SignIn from "./components/SignIn";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/playground" element={<Playground />} />
+            <Route path="/sign-in" element={<SignIn />} />
           </Routes>
           <Footer />
         </BrowserRouter>

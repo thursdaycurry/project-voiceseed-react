@@ -14,7 +14,9 @@ export default function Header() {
         <Link to="/pricing">Pricing</Link> */}
       </nav>
       {/* User part */}
-      <div className="flex space-x-10 ">{/* <div>Login</div> */}</div>
+      <div className="flex space-x-10 ">
+        <Link to="/sign-in">Login</Link>
+      </div>
     </header>
   );
 }
