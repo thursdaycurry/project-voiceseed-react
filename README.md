@@ -12,6 +12,12 @@ The homepage UI uses a framed layout to create a warm and welcoming atmosphere. 
 
 Developing Playground page that user can input text to convert to speech, api key and language selector.
 
+##
+
+![day 3 ui screenshot](./devlog/imgs/2025-04-21-login.jpg)
+
+Developing Login page that communicate with server for authentication
+
 # SeedVoice
 
 VoiceMind is an AI-powered SaaS product that transforms meaningful text into clear and memorable audio.
